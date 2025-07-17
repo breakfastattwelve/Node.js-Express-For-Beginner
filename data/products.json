@@ -1,0 +1,34 @@
+
+  [
+    {
+      "id": 1,
+      "prouductTitle": "นํ้ายาล้างจาน",
+      "productDescription": "นํ้ายาสูตร 1",
+      "productPrice": 45
+    },
+    {
+      "id": 2,
+      "prouductTitle": "นํ้ายาล้างจาน 2",
+      "productDescription": "นํ้ายาสูตร 2",
+      "productPrice": 65
+    },
+    {
+      "id": 3,
+      "prouductTitle": "นํ้ายาล้างจาน 3",
+      "productDescription": "นํ้ายาสูตร 3",
+      "productPrice": 85
+    },
+    {
+      "id": 4,
+      "prouductTitle": "นํ้ายาล้างจาน 4",
+      "productDescription": "นํ้ายาสูตร 4",
+      "productPrice": 105
+    },
+    {
+      "id": 5,
+      "prouductTitle": "นํ้ายาล้างจาน 5",
+      "productDescription": "นํ้ายาสูตร 5",
+      "productPrice": 155
+    }
+  ]
+
