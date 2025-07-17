@@ -3,20 +3,8 @@ import chalk from "chalk";
 import createDebug from "debug";
 import morgan from "morgan";
 import path from "path";
-import { readFile } from "fs/promises";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
-
-// import products from "./data/products.json"
-// import products from "./data/products.json" assert { type: "json" };
-// โหลด products.json
-const productsRaw = await readFile(new URL("./data/products.json", import.meta.url));
-const products = JSON.parse(productsRaw);
-
-
-
-
-const productRouter = express.Router();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -24,6 +12,8 @@ const __dirname = dirname(__filename);
 const debug = createDebug("app");
 const app = express();
 const PORT = process.env.PORT || 4000;
+import productsRouter from "./src/router/productsRouter.js";
+
 
 app.use(morgan("combined"));
 
@@ -34,20 +24,8 @@ app.use(express.static(path.join(__dirname, "/public/")));
 app.set("views", "./src/views");
 app.set("view engine", "ejs");
 
-productRouter.route("/").get((req, res) => {
-  res.render("products",{
-    products,
-  });
-});
 
-productRouter.route("/:id").get((req, res) => {
-  const id = req.params.id
-  res.render("product",{
-    product:products[id]
-  })
-});
-
-app.use("/products", productRouter);
+app.use("/products", productsRouter);
 // app.get ใช้จัดการเกี่ยวกับ request ที่เข้ามา
 // ถ้าเข้ามาใน "/" จะตอบกลับผู้ใช้ยังไงดี ตอบใน {}
 app.get("/", (req, res) => {
